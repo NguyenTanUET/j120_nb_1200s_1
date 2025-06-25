@@ -180,7 +180,7 @@ def main():
     # Define directories
     data_dir = Path("data")
     result_dir = Path("result")
-    output_file = result_dir / "j120_with_bound_1200s.csv"
+    output_file = result_dir / "j120_with_bound_1200s_1.csv"
 
     # Create result directory if it doesn't exist
     os.makedirs(result_dir, exist_ok=True)
@@ -285,8 +285,8 @@ def main():
     client = storage.Client()
     bucket = client.bucket(bucket_name)
 
-    local_path = "result/j120_with_bound_1200s.csv"
-    blob_name = f"results/{os.path.basename(local_path)}"  # ví dụ "results/j120_with_bound_1200s.csv"
+    local_path = "result/j120_with_bound_1200s_1.csv"
+    blob_name = f"results/{os.path.basename(local_path)}"  # ví dụ "results/j120_with_bound_1200s_1.csv"
 
     blob = bucket.blob(blob_name)
     blob.upload_from_filename(local_path)
